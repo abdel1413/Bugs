@@ -18,3 +18,17 @@ try {
 } catch (error) {
   console.log("someting went wrong" + error);
 }
+
+for (;;) {
+  let dir = direction("where");
+  try {
+    console.log("you  chose " + dir);
+    break;
+  } catch (error) {
+    if (error instanceof InputError) {
+      console.log("Not a valid direction");
+    } else {
+      throw error;
+    }
+  }
+}
